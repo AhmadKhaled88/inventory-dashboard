@@ -1,37 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Inventory Dashboard
 
-## Getting Started
+Next.js 16 · React 19 · Tailwind CSS
 
-First, run the development server:
+A modern, responsive Product Inventory Dashboard built with the latest Next.js App Router and React 19 features.
+This project demonstrates server-side data fetching, URL-based state management, and optimistic UI updates in a real-world admin dashboard layout.
 
-```bash
+🚀 Tech Stack
+
+Framework: Next.js 16 (App Router)
+
+Library: React 19
+
+Styling: Tailwind CSS
+
+State Management: nuqs (type-safe URL search params)
+
+Data Source: DummyJSON API
+
+Language: TypeScript
+
+✨ Features
+🧭 Persistent Admin Layout
+
+Fixed sidebar on desktop
+
+Responsive navigation for mobile & tablet
+
+Category list fetched server-side
+
+Active category highlighting
+
+🔍 URL-Based State (nuqs)
+
+Search query stored in the URL (?q=laptop)
+
+Category filter stored in the URL (?category=smartphones)
+
+Page refresh preserves filters & search
+
+Fully type-safe search params
+
+🧩 Product Dashboard
+
+Responsive grid layout
+
+Desktop: 4 columns
+
+Tablet: 2 columns
+
+Mobile: 1 column
+
+Skeleton loaders during data updates
+
+Clean, minimal UI
+
+⚡ React 19 Optimistic UI
+
+Instant product removal using useOptimistic
+
+Server Action simulates delete request
+
+UI updates immediately while the server responds
+
+🧠 Server-First Architecture
+
+Initial data fetched in Server Components
+
+Mutations handled via Next.js Server Actions
+
+No unnecessary client-side data fetching
+
+🗂️ Project Structure
+src/
+├── app/
+│   ├── layout.tsx        # Root layout
+│   ├── page.tsx          # Main dashboard page (server component)
+│   └── actions.ts        # Server actions (delete simulation)
+│
+├── components/
+│   ├── Sidebar.tsx
+│   ├── TopBar.tsx
+│   ├── ProductsGrid.tsx
+│   ├── ProductCard.tsx
+│   └── SkeletonGrid.tsx
+│
+├── lib/
+│   ├── api.ts            # API fetch helpers
+│   └── types.ts          # TypeScript types
+│
+└── styles/
+    └── globals.css
+
+🌐 API Used
+
+All data is fetched from DummyJSON (no authentication required):
+
+Get Products
+https://dummyjson.com/products
+
+Search Products
+https://dummyjson.com/products/search?q=phone
+
+Get Categories
+https://dummyjson.com/products/categories
+
+Delete Product (Simulated)
+https://dummyjson.com/products/{id}
+
+⚠️ Note: Delete requests are simulated. Products reappear on refresh.
+
+🛠️ Getting Started
+1️⃣ Clone the repository
+git clone https://github.com/your-username/inventory-dashboard.git
+cd inventory-dashboard
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4️⃣ Open in browser
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🧪 Key Concepts Demonstrated
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js App Router & Server Components
 
-## Learn More
+React 19 useOptimistic
 
-To learn more about Next.js, take a look at the following resources:
+Server Actions for mutations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Type-safe URL state with nuqs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Responsive admin dashboard UI
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# inventory-dashboard" 
+Clean architecture (no prop-drilling)
